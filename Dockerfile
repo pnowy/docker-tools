@@ -1,4 +1,5 @@
 FROM ubuntu:19.10
+LABEL maintainer="pnowy"
 
 RUN apt update && \
     apt install git -y && \
