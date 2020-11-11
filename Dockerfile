@@ -5,7 +5,7 @@ LABEL maintainer="pnowy"
 RUN apt update && \
     apt install git -y && \
     apt install curl -y && \
-    apt install gnupg2 wget iputils-ping -y
+    apt install gnupg2 wget iputils-ping -y \
     apt install dnsutils -y
 
 RUN apt-get install openjdk-11-jdk -y && \
