@@ -1,18 +1,17 @@
-FROM ubuntu:19.10
+FROM ubuntu:20.10
 
 LABEL maintainer="pnowy"
 
 RUN apt update && \
     apt install git -y && \
     apt install curl -y && \
-    apt install gnupg2 wget iputils-ping -y \
-    apt install dnsutils -y
+    apt install gnupg2 wget iputils-ping dnsutils -y
 
 RUN apt-get install openjdk-11-jdk -y && \
     apt install maven -y
 
-ENV KUBECTL_VERSION="v1.14.7"
-ENV KUBECTX_VERSION "0.6.3"
+ENV KUBECTL_VERSION="v1.17.11"
+ENV KUBECTX_VERSION "0.9.1"
 
 RUN apt-get install -y apt-transport-https && curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - && \
     echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | tee -a /etc/apt/sources.list.d/kubernetes.list && \
